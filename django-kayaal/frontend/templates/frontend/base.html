@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'frontend/css/normalize.css' %}" rel="stylesheet">
+    <link href="{% static 'frontend/css/styles.css' %}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap" rel="stylesheet">
+     <link rel="icon" href="{% static 'frontend/images/favicon.ico' %}" type="images/x-icon">
+    <title>{{title}}</title>
+</head>
+<body>
+     {% block header %}
+     <header class="header">
+         <div class="container">
+             <div class="header__container">
+                 <div class="header__burger">
+                     <span class="burger__line"></span>
+                     <span class="burger__line"></span>
+                     <span class="burger__line"></span>
+                 </div>
+                 <div class="header__navigation-container">
+                     <div class="navigation__burger">
+                             <span class="burger__line"></span>
+                             <span class="burger__line"></span>
+                             <span class="burger__line"></span>
+                        </div>
+                     <nav class="header__navigation">
+                         <ul class="navigation__list">
+                             <li class="navigation__item">
+                                 <a href="{% url 'home' %}" class="navigation__href">
+                                    Главная
+                                 </a>
+                             </li>
+                             <li class="navigation__item">
+                                 <a href="{% url 'demand' %}" class="navigation__href">
+                                    Востребованность
+                                 </a>
+                             </li>
+                             <li class="navigation__item">
+                                 <a href="{% url 'geography' %}" class="navigation__href">
+                                    География
+                                 </a>
+                             </li>
+                             <li class="navigation__item">
+                                 <a href="{% url 'skills' %}" class="navigation__href">
+                                     Навыки
+                                 </a>
+                             </li>
+                             <li class="navigation__item">
+                                 <a href="{% url 'vacancy' %}" class="navigation__href">
+                                    Последние вакансии
+                                 </a>
+                             </li>
+                         </ul>
+                     </nav>
+                 </div>
+                 <h1 class="header__title">Frontend</h1>
+                 <img class="header__logo" src="{% static 'frontend/images/logo.svg' %}" alt="Логотип">
+             </div>
+         </div>
+     </header>
+     {% endblock header %}
+     <main class="main">
+         {% block content %}
+         {% endblock content%}
+     </main>
+     {% block footer %}
+     <footer class="footer">
+         <div class="container">
+             <div class="footer__container">
+                <p class="footer__information">
+                    Кобелев Егор Олегович АТ-35 РИ-210942
+                </p>
+             </div>
+         </div>
+     </footer>
+     {% endblock footer %}
+     <script src=" {% static 'frontend/js/burger.js' %}"></script>
+</body>
+</html>

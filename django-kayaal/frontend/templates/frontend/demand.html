@@ -1,0 +1,39 @@
+{% extends 'frontend/base.html' %}
+
+
+{% block content %}
+<section class="demand">
+    <div class="container">
+        <div class="demand__container">
+            <h2 class="demand__title">Востребованность</h2>
+            <table class="demand__table">
+                <thead class="table__header">
+                    <tr class="table__row">
+                        <th class="table__cell">Год</th>
+                        <th class="table__cell">Средняя зарплата</th>
+                        <th class="table__cell">Средняя зарплата - Фронтендер</th>
+                        <th class="table__cell">Количество вакансий</th>
+                        <th class="table__cell">Количество вакансий - Фронтендер</th>
+                    </tr>
+                </thead>
+                <tbody class="table__body">
+                {% for item in demand_table_info%}
+                    <tr class="table__row">
+                        <th class="table__cell">{{item.year}}</th>
+                        <th class="table__cell">{{item.average_salary}}</th>
+                        <th class="table__cell">{{item.average_salary_profession}}</th>
+                        <th class="table__cell">{{item.vacancies_count}}</th>
+                        <th class="table__cell">{{item.vacancies_count_profession}}</th>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="demand__images-container">
+                {% for item in demand_graphic_info%}
+                <img class="demand__image" src="{{item.photo.url}}" alt="график статических данных">
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content%}

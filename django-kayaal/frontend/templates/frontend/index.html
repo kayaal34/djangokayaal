@@ -1,0 +1,97 @@
+
+{% extends 'frontend/base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="about">
+       <div class="container">
+           <div class="about__container">
+               <h2 class="about__title">
+                   Что такое фронтенд?
+               </h2>
+               <p class="about__description about__description--first">
+                   Фронтенд-разработка — это создание пользовательского интерфейса на клиентской стороне веб‑сайта или приложения. Это всё, что видит пользователь, когда открывает веб-страницу, и с чем он взаимодействует: кнопки, баннеры и анимация.
+               </p>
+               <p class="about__title--list about__description">Фронтенд сайта или веб-приложения можно разделить на три большие части:</p>
+               <ul class="about__list">
+                   <li class="about__item about__description about__description--second">
+                        HTML (HyperText Markup Language) — язык разметки документов, на котором создают структуру страницы: заголовки, абзацы, списки и так далее.
+                   </li>
+                   <li class="about__item about__description about__description--second">
+                        CSS (Cascading Style Sheets) — язык для описания и стилизации внешнего вида документа. Благодаря CSS-коду браузер понимает, как именно отображать элементы. Например, CSS задаёт цвета и параметры шрифтов, определяет, как будут располагаться разные блоки сайта. Ещё он позволяет воспроизводить документ в разных видах: для печати (обычной или шрифтом Брайля), вывода на экран или для чтения скринридером.
+                   </li>
+                   <li class="about__item about__description about__description--second">
+                       JavaScript — это язык, который оживляет веб-страницы. Его задача — реагировать на действия пользователя, обрабатывать клики мышки, перемещения курсора, нажатия клавиш. Ещё он посылает запросы на сервер и загружает данные без перезагрузки страницы, позволяет вводить сообщения и многое другое
+                   </li>
+               </ul>
+               <div class="about__image-container">
+                   <img class="about__image" src="{% static 'frontend/images/about.png' %}" alt="Картинка">
+                   <p class="about__description about__description--third">
+                       В процессе работы фронтендер взаимодействует с дизайнерами, UX-аналитиками и, конечно же, бэкенд-разработчиками. Бэкенд — это разработка бизнес-логики продукта. Бэкенд отвечает за взаимодействие пользователя с внутренними данными, которые потом отображает фронтенд.
+                   </p>
+               </div>
+           </div>
+       </div>
+    </section>
+    <section class="interaction">
+        <div class="container">
+            <div class="interaction__container">
+                <h2 class="interaction__title">
+                    Взаимодействие фронтенда и бэкенда
+                </h2>
+                <ul class="interaction__list">
+                    <li class="interaction__item">
+                        · клиентская часть приложения (фронтенд) отправляет пользовательскую информацию на сервер (бэкенд);
+                    </li>
+                    <li class="interaction__item">
+                        · программа на сервере обрабатывает информацию;
+                    </li>
+                    <li class="interaction__item">
+                        · информация возвращается клиентской стороне в понятной для пользователя форме.
+                    </li>
+                </ul>
+                <p class="interaction__description">
+                    Несмотря на то что бэкендом и фронтендом занимаются разные специалисты, каждому из них желательно понимать принципы, по которым работают коллеги.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="technologies">
+        <div class="container">
+            <div class="technologies__container">
+                <h2 class="technologies__title">
+                    Технологии, которые должен освоить фронтенд-разработчик
+                </h2>
+                <ul class="technologies__list">
+                    <li class="technologies__item">
+                        · популярные фреймворки и библиотеки: jQuery, Angular.JS, React.JS, Backbone.js;
+                    </li>
+                    <li class="technologies__item">
+                        · препроцессоры CSS;
+                    </li>
+                    <li class="technologies__item">
+                        · OOCSS / BEM / SMACSS;
+                    </li>
+                    <li class="technologies__item">
+                        · DOM;
+                    </li>
+                    <li class="technologies__item">
+                        · популярные CMS;
+                    </li>
+                    <li class="technologies__item">
+                        · понимать принципы построения бэкенда и разбираться в серверных технологиях;
+                    </li>
+                    <li class="technologies__item">
+                        · инструменты дебаггинга (Chrome Dev Tools, Firebug);
+                    </li>
+                    <li class="technologies__item">
+                        · инструменты контроля версий (Git, GitHub, Gitlab);
+                    </li>
+                    <li class="technologies__item">
+                        · кросс-браузерная и кросс-платформенная разработка.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}

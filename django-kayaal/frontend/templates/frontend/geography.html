@@ -1,0 +1,59 @@
+{% extends 'frontend/base.html' %}
+
+
+{% block content %}
+<section class="geography">
+    <div class="container">
+        <div class="geography__container">
+            <h2 class="geography__title">География</h2>
+            <table class="geography__tables-container geography__special-table" style="border:none">
+                <tr class="special-table__row">
+                    <th class="special-table__cell">
+                        <table class="geography__table">
+                            <thead class="table__header">
+                                <tr class="table__row">
+                                    <th class="table__cell">Город</th>
+                                    <th class="table__cell">Средняя зарплата</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table__body">
+                            {% for item in geography_salary_table_info%}
+                                <tr class="table__row">
+                                    <th class="table__cell">{{item.city}}</th>
+                                    <th class="table__cell">{{item.salary}}</th>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </th>
+                    <th class="special-table__cell--spacing">
+                    </th>
+                    <th class="special-table__cell">
+                         <table class="geography__table">
+                            <thead class="table__header">
+                                <tr class="table__row">
+                                    <th class="table__cell">Город</th>
+                                    <th class="table__cell">Доля вакансий</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table__body">
+                            {% for item in geography_vacancies_table_info%}
+                                <tr class="table__row">
+                                    <th class="table__cell">{{item.city}}</th>
+                                    <th class="table__cell">{{item.vacancy_rate}}</th>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                         </table>
+                    </th>
+                </tr>
+            </table>
+             <div class="geography__images-container">
+                {% for item in geography_graphic_info%}
+                <img class="geography__image" src="{{item.photo.url}}" alt="график статических данных">
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content%}

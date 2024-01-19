@@ -1,0 +1,66 @@
+{% extends 'frontend/base.html' %}
+
+
+{% block content%}
+<section class="vacancy">
+    <div class="container">
+        <div class="vacancy__container">
+            <h2 class="vacancy__title">
+                Последние навыки
+            </h2>
+            <p class="vacancy__description">
+                Для получения вакансий из hh.ru введите любой день декабря. Поиск происходит в течение 1 минуты.
+            </p>
+            <form class="vacancy__form" action="{% url 'vacancy' %}" method="POST">
+                {% csrf_token %}
+                <p class="form__input-container"><label class="form__label" for="{{ form.day.id_for_label }}">{{form.day.label}}: </label>{{form.day}}</p>
+                <button class="form__button" type="submit">Найти</button>
+            </form>
+
+            {% if flag %}
+                <table class="vacancy__table">
+                    <thead class="table_header">
+                        <tr class="table__row">
+                            <th class="table__cell">
+                                Название вакансии
+                            </th>
+                            <th class="table__cell">
+                                Описание вакансии
+                            </th>
+                            <th class="table__cell">
+                                Навыки
+                            </th>
+                            <th class="table__cell">
+                                Компания
+                            </th>
+                            <th class="table__cell">
+                                Оклад
+                            </th>
+                            <th class="table__cell">
+                                Название региона
+                            </th>
+                            <th class="table__cell">
+                                Дата публикации вакансии
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body">
+                    {% for element in data %}
+                        <tr class="table__row">
+                            <th class="table__cell">{{element.name}}</th>
+                            <th class="table__cell">{{element.snippet_responsibility}}</th>
+                            <th class="table__cell">{{element.snippet_requirement}}</th>
+                            <th class="table__cell">{{element.employer_name}}</th>
+                            <th class="table__cell">{{element.salary}}</th>
+                            <th class="table__cell">{{element.area_name}}</th>
+                            <th class="table__cell">{{element.published_at}}</th>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    </table>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{%endblock content%}
